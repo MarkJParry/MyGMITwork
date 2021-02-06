@@ -10,3 +10,7 @@ Contents:
 |Week01   |small proram to output hello world; set up github; push using http and ssh                                        |22/01/2021|
 |Week02   |demonstrate variable types, operations(*/-+) modulus, loops                                                       |27/02/2012|
 |Week03   |use of math library etc                                                                                           |04/02/2021|
+
+Sites used: askpython, realpython, w3schoold
+Books used: automate the boring stuff, whirlwind tour
+Note to self - fully qualify above
