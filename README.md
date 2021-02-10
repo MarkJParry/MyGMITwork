@@ -7,8 +7,8 @@ Contents:
 
 |Lab      |Description                                                                                                       |Date      |
 |---------|------------------------------------------------------------------------------------------------------------------|----------|
-|Week01   |small proram to output hello world; set up github; push using http and ssh                                        |22/01/2021|
-|Week02   |demonstrate variable types, operations(*/-+) modulus, loops                                                       |27/02/2012|
+|Week01   |small program to output hello world; set up github; push using http and ssh                                        |22/01/2021|
+|Week02   |demonstrate variable types, operations modulus, loops                                                              |27/02/2012|
 |Week03   |use of math library etc                                                                                           |04/02/2021|
 |Week04   |exercises centre around program flow                                                                              |10/04/2021|
 
