@@ -7,10 +7,12 @@ Contents:
 
 |Lab      |Description                                                                                                       |Date      |
 |---------|------------------------------------------------------------------------------------------------------------------|----------|
-|Week01   |small program to output hello world; set up github; push using http and ssh                                        |22/01/2021|
-|Week02   |demonstrate variable types, operations modulus, loops                                                              |27/02/2012|
+|Week01   |small program to output hello world; set up github; push using http and ssh                                       |22/01/2021|
+|Week02   |demonstrate variable types, operations modulus, loops                                                             |27/02/2012|
 |Week03   |use of math library etc                                                                                           |04/02/2021|
-|Week04   |exercises centre around program flow                                                                              |10/04/2021|
+|Week04   |exercises centre around program flow                                                                              |10/02/2021|
+|Week05   |exercises centre around dictionaries,primes                                                                       |17/02/2021|
+|Week06   |exercises centre around functions and a student management system program                                         |28/02/2021|
 
 Sites used: askpython, realpython, w3schools
 Books used: automate the boring stuff, whirlwind tour
