@@ -1,4 +1,4 @@
-#Filename:  studentDict.py
+#Filename:  studentDictTest.py
 #Author:    Mark Parry
 #Created:   19/02/2021
 #Purpose:   Program that stores a student name and a list of their courses and grades in a dict and prints out their data.
@@ -9,8 +9,8 @@
 studentDetails = {  "Student1":{
                                 "Name":"Mary",
                                 "Courses":{
-                                            "English":"A+",
-                                            "Irish":"C-"
+                                           "English":"A+",
+                                           "Irish":"C-"
                                          },
                              },
                     "Student2":{
@@ -22,17 +22,11 @@ studentDetails = {  "Student1":{
                                          },
                               }
                  }
-print(studentDetails)   
-print(len(studentDetails))
-for student, names in studentDetails.items():
-    print(student)
-    for name, courses  in names.items():
-        print(name, courses)
-    for course in courses:
-        print(course, courses[course])
+print(studentDetails)
 
-for student in studentDetails
-   print(studentDetail[student])
-   for detail,rest in details.items():
-      # print(detail,rest)
-     
+for student in studentDetails:
+    print(student, studentDetails[student])
+    for name in studentDetails[student]:
+        print(name,studentDetails[student][name])
+        for course in studentDetails[student][name]:
+            print(course)
