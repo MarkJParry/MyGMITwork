@@ -6,26 +6,53 @@
 #set up dictionary for testing
 students = {1: {'John':{'English':'A','Irish':'B'}},      
             2: {'John':{'English':'B','Irish':'B','Chemistry':'B+'}},
-            3: {'Mark':{'English':'B','Irish':'D','Maths':'C'}}
+            3: {'Mark':{'English':'B','Irish':'D','Maths':'C'}},
+            4: {'Mary':{'English':'A','Irish':'D','Maths':'A'}},
+            5: {'John':{'Irish':'B'}}
          }
 #function to display menu
 def studentMenu():
     option = input("\nPlease choose from the following options:\n[a] Add a New Student\n[v] View an Existing Student\n[q] Quit\nType the letter a, v or q ").strip()
     return option
 
+
 #function to add a student to the dictionary
 def studentAdd():
-    print("In Add")
-    aName = "InAdd"
-    while (aName != ""):
-        aName = input("Enter the name of the student you would like to add:\nLeave this blank to return to the menu ").strip()
+    cname = 'Start'
+    courses = {}
+    names ={}
+    
+    studentName = input('Please enter student name: ').strip()
+
+    if studentName == "":
+        return
+
+    studentId = getNewStudentId()
+
+    while cname != "":
+        cname = input("Course:").strip()
+        if cname != "":
+           cgrade = input("Grade:").strip()
+           courses[cname] = cgrade
+        
+    #add courses dict to names dictionary
+    names[studentName] = courses
+    #add names dict to students dictionary
+    students[studentId] = names
+    print(students[studentId], " added to dictionary")
+    return
+
+#function to get the highest value of studentId in dictionary and increment it by 1 for a new student
+def getNewStudentId():
+    studentId = int(max(students) +1)
+    return studentId
 
 #function to view a student in the dictionary
 def studentView():
-    s_id = studentSelect()
-    if s_id !=0:
-        #print("Student Id: ",s_id)
-        studentPrint(s_id)
+    studentId,studentName = studentSelect()
+    if studentId !=0:
+        #print("Student Id: ",studentId)
+        studentCourses(studentId,studentName)
     else:
         print("\nStudent not found")
     return
@@ -33,42 +60,36 @@ def studentView():
 #function to select  a student (if duplicate names in the dictionary presents choice of IDS)
 def studentSelect():
 
-    nameIn = input("Enter student name: ").strip()
-    s_ids = studentGetIds(nameIn)
+    studentName = input("Enter student name: ").strip()
+    studentIds,studentsFound = studentGetIds(studentName)
 
-    if len(s_ids) == 0:
-        s_id = 0
-    elif len(s_ids) > 1:
-        s_id = int(input("There are {} students called {} which one do you want to view {}: ".format(len(s_ids),nameIn,s_ids)))
+    if studentsFound == 0:
+        studentId = 0
+    elif studentsFound > 1:
+        studentId = int(input("There are {} students called {} which one do you want to view {}: ".format(len(studentIds),studentName,studentIds)))
     else:
-        s_id = s_ids[0]
-    return s_id
+        studentId = studentIds[0]
+    return studentId, studentName
 
-# function to return student IDS for any name or duplicate names
-def studentGetIds(nameIn):
-    s_ids = []
-    for s_id, s_info in students.items():
-        for name, c_info in s_info.items():
-            if nameIn == name:
-                s_ids.append(s_id)
-
-    return s_ids
+#function to return student IDS for any name or duplicate names
+def studentGetIds(studentName):
+    studentIds = []
+    for student in students:
+        for name in students[student]:
+            if studentName == name:
+                studentIds.append(student)
+    studentsFound = len(studentIds)
+    return studentIds, studentsFound
 
 
 #function to display the selected students info
-def studentPrint(s_id_in):
-    for s_id, s_info in students.items():
-        if s_id == s_id_in:
-            print("\nStudent ID:", s_id)
-        
-            for name, c_info in s_info.items():
-                print("Name:", name)
-                print("Course     \tGrade")
-            
-                for course in c_info:
-                    print("{}     \t{}".format(course, c_info[course]))
-    return
-
+def studentCourses(studentId,studentName):
+    print("<---Student Details--->")
+    print("Name: {}\tID: {}\n".format(studentName, studentId))
+    print("Course   \tGrade")
+    print("======   \t=====")
+    for course in students[studentId][studentName]:
+        print("{}    \t{}".format(course,students[studentId][studentName][course]))
 
 #start - Main body of program
 choice = ""

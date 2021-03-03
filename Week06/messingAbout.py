@@ -1,3 +1,5 @@
+#https://www.askpython.com/python/dictionary/python-dictionary-dict-tutorial
+
 #set up dictionary for testing
 students = {1: {'John':{'English':'A','Irish':'B'}},      
             2: {'John':{'English':'B','Irish':'B','Chemistry':'B+'}},
@@ -37,11 +39,11 @@ for student in students:
 #loop through dictionary and return student ID keys if duplicate names - 
 #zero length means not found, length 1 indicates exact match and length > 1 means duplicates found
 #this can be checked by the calling statement upon return
-def studentGetIds(nameIn):
+def studentGetIds(studentName):
     studentIds = []
     for student in students:
         for name in students[student]:
-            if nameIn == name:
+            if studentName == name:
                 studentIds.append(student)
     studentsFound = len(studentIds)
     return studentIds, studentsFound

@@ -3,7 +3,7 @@ students = {1: {'John':{'English':'A','Irish':'B'}},
             2: {'John':{'English':'B','Irish':'B','Chemistry':'B+'}},
             3: {'Mark':{'English':'B','Irish':'D','Maths':'C'}}
          }
-def getStudentId():
+def getNewStudentId():
     studentId = int(max(students) +1)
     return studentId
 
@@ -12,12 +12,12 @@ def studentAdd():
     courses = {}
     names ={}
     
-    inName = input('Please enter name ').strip()
+    studentName = input('Please enter student name: ').strip()
 
-    if inName == "":
+    if studentName == "":
         return
 
-    studentId = getStudentId()
+    studentId = getNewStudentId()
 
     while cname != "":
         cname = input("Course:").strip()
@@ -26,7 +26,7 @@ def studentAdd():
            courses[cname] = cgrade
         
     #print(courses)
-    names[inName] = courses
+    names[studentName] = courses
     #print(names)
     students[studentId] = names
     print(students[studentId], " added to dictionary")
