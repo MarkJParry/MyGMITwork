@@ -8,14 +8,14 @@
 
 studentDetails = {  "Student1":{
                                 "Name":"Mary",
-                                "Course":{
+                                "Courses":{
                                             "English":"A+",
                                             "Irish":"C-"
                                          },
                              },
                     "Student2":{
-                                "Name":"Mark",
-                                "Course":{
+                                "Name":"Marky",
+                                "Courses":{
                                             "English":"A",
                                             "Irish":"C+",
                                             "Physics":"B+"
@@ -23,10 +23,34 @@ studentDetails = {  "Student1":{
                               }
                  }
 
-for student, name in studentDetails.items():
-    print(student, name)
-    for course in courses.item():
-            print(course)
+
+
+print("1. " , studentDetails.items())
+print("1. " , studentDetails.keys())
+print("1. " , studentDetails.values())
+print("\n2. " , studentDetails["Student1"].items())
+print("2. " , studentDetails["Student1"].keys())
+print("2. " , studentDetails["Student1"].values())
+print("2. " , studentDetails["Student1"]["Name"])
+
+print("\n3. " , studentDetails["Student1"]["Courses"].items())
+print("3. " , studentDetails["Student1"]["Courses"].keys())
+print("3. " , studentDetails["Student1"]["Courses"].values())
+print("3. " , studentDetails["Student1"]["Courses"][1]])
+#print(studentDetails["Student1"]["Courses"]["English"])
+
+input("Press return to continue")
+
+for student, info in studentDetails.items():
+    print("loop1 " + student + ':', studentDetails[student])
+    for name, courses in info.items():
+        print("loop2 " + name + ':', info[name])
+        
+        for course in courses:
+            print("loop3 " + course + ':')
+           # print(course + ':', courses[course])
+#   for course in name.item():
+#            print(course)
 
 #define menu, add and view functions
 def doMenu():
