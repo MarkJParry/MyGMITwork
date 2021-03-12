@@ -31,5 +31,7 @@ explode[posMax] = 0.1
 
 mpl.pie(counts,labels=unique,explode=explode,shadow=True)
 mpl.show()
+
+#use same values for bar chart
 mpl.bar(unique, counts)
 mpl.show()
